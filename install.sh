@@ -16,14 +16,14 @@ echo "-----------------------------------------------------------"
 echo "* Git clone esp-open-sdk"
 echo "-----------------------------------------------------------"
 
-#git clone https://github.com/pfalcon/esp-open-sdk
+git clone https://github.com/pfalcon/esp-open-sdk
 
 echo "-----------------------------------------------------------"
 echo "* Make esp-open-sdk"
 echo "-----------------------------------------------------------"
 
 cd esp-open-sdk
-#make STANDALONE=y
+make STANDALONE=y
 
 echo "-----------------------------------------------------------"
 echo "* Add CT-NG tool location to PATH"
