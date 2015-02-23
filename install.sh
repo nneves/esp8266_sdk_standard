@@ -11,18 +11,31 @@ trap "exit" SIGHUP SIGINT SIGTERM
 echo "-----------------------------------------------------------"
 echo "| ESP8266 Setup Environment Script                        |"
 echo "-----------------------------------------------------------"
-echo ""
+echo "ESP8266 Wifi module SDK installation script!"
+echo "Source: https://github.com/pfalcon/esp-open-sdk"
+
+echo "-----------------------------------------------------------"
+echo "* Install Linux Debian depencies"
+echo "-----------------------------------------------------------"
+sudo apt-get install -y make wget unrar-free autoconf automake build-essential libc6-dev \
+    libtool gcc g++ gperf git flex bison texinfo gawk python sed python-serial \
+    ncurses-dev libexpat-dev
+    #libncurses5-dev libexpat1-dev
+
 echo "-----------------------------------------------------------"
 echo "* Git clone esp-open-sdk"
 echo "-----------------------------------------------------------"
 
 git clone https://github.com/pfalcon/esp-open-sdk
+cd esp-open-sdk
+git submodule init
+git submodule update
 
 echo "-----------------------------------------------------------"
 echo "* Make esp-open-sdk"
 echo "-----------------------------------------------------------"
 
-cd esp-open-sdk
+make clean
 make STANDALONE=y
 
 echo "-----------------------------------------------------------"
