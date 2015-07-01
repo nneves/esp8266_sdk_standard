@@ -18,7 +18,7 @@ echo "-----------------------------------------------------------"
 echo "* Install Linux Debian depencies"
 echo "-----------------------------------------------------------"
 sudo apt-get install -y make wget unrar-free autoconf automake build-essential libc6-dev \
-    libtool gcc g++ gperf git flex bison texinfo gawk python sed python-serial \
+    libtool libtool-bin gcc g++ gperf git flex bison texinfo gawk python sed python-serial \
     ncurses-dev libexpat-dev
     #libncurses5-dev libexpat1-dev
 
